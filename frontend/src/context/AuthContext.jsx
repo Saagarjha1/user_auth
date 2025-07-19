@@ -20,7 +20,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", {
+      const res = await axios.post("https://user-auth-tnf0.onrender.com/api/auth/login", {
         email,
         password,
       });
@@ -36,7 +36,7 @@ export const AuthProvider = ({ children }) => {
 
   const signup = async (name, email, password) => {
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/register", {
+      const res = await axios.post("https://user-auth-tnf0.onrender.com/api/auth/register", {
         name,
         email,
         password,
