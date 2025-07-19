@@ -16,7 +16,7 @@ function Login({ onSwitch, onSubmit }) {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", {
+      const res = await axios.post("https://user-auth-tnf0.onrender.com/api/auth/login", {
         email,
         password,
       });
@@ -45,7 +45,7 @@ function Login({ onSwitch, onSubmit }) {
 
     try {
       setLoadingQuestion(true);
-      const res = await axios.get("http://localhost:5000/api/auth/security-question", {
+      const res = await axios.get("https://user-auth-tnf0.onrender.com/api/auth/security-question", {
         params: { email },
       });
       setSecurityQuestion(res.data.securityQuestion);
@@ -60,7 +60,7 @@ function Login({ onSwitch, onSubmit }) {
   const handleResetPassword = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/auth/reset-password-with-security", {
+      await axios.post("https://user-auth-tnf0.onrender.com/api/auth/reset-password-with-security", {
         email,
         securityAnswer,
         newPassword,
