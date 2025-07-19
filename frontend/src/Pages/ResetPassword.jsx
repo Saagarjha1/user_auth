@@ -16,7 +16,7 @@ function ResetPassword({ onBack }) {
     }
 
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/get-question", { email });
+      const res = await axios.post("https://user-auth-tnf0.onrender.com/api/auth/get-question", { email });
       setSecurityQuestion(res.data.securityQuestion);
       setQuestionFetched(true);
     } catch (err) {
@@ -27,7 +27,7 @@ function ResetPassword({ onBack }) {
   const handleReset = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/auth/reset-password", {
+      await axios.post("https://user-auth-tnf0.onrender.com/api/auth/reset-password", {
         email,
         securityAnswer,
         newPassword,
