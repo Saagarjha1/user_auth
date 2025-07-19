@@ -23,7 +23,7 @@ function Signup({ onSwitch, onSubmit, onResetPassword }) {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/register", {
+      const res = await axios.post("https://user-auth-tnf0.onrender.com/api/auth/register", {
         name: name.trim(),
         email: email.trim(),
         password,
